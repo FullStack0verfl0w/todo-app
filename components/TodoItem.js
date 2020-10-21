@@ -13,7 +13,7 @@ const TodoItem = (props) => {
 	const doDelete = (e) => {
 		dispatch({ type: ACTION_TYPE_DELETE_TODO, id: id });
 	};
-
+	
 	return (
 		<>
 			<View style={styles.mainWrapper}>
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default TodoItem;
+export default React.memo(TodoItem);
