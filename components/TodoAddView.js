@@ -29,6 +29,7 @@ const TodoAddView = (props) => {
 				<TextInput style={styles.textInput} onChangeText={onTextInputChange}/>
 				<TextButton text="Add" onPress={doAdd} textSize={20} style={styles.button}/>
 			</View>
+			<TextButton text="✕" textSize={13} style={styles.closeButton} onPress={closeView} />
 		</View>
 	);
 };
@@ -52,6 +53,14 @@ const styles = StyleSheet.create({
 		backgroundColor: "#fff",
 		justifyContent: "space-between",
 		borderRadius: 3,
+	},
+	closeButton: {
+		width: 24,
+		height: 24,
+		borderRadius: 1000,
+		position: "relative",
+		bottom: 210,
+		left: 156,
 	},
 	text: {
 		fontSize: 18,
