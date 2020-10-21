@@ -48,7 +48,7 @@ const AppContainer = (props) => {
 						state.todo.map((elem, id) => {
 							return <TodoItem id={id}
 											 text={elem.text}
-											 isDone={elem.status}
+											 status={elem.status}
 											 key={id} />
 						})
 				}

@@ -6,18 +6,18 @@ import TodoStatusButton from "./TodoStatusButton";
 import TextButton from "./TextButton";
 
 const TodoItem = (props) => {
-	const { id, text, isDone } = props;
+	const { id, text, status } = props;
 	const dispatch = useContext(dispatchContext);
 
 	// Удаляем элемент из state
 	const doDelete = (e) => {
 		dispatch({ type: ACTION_TYPE_DELETE_TODO, id: id });
 	};
-	
+
 	return (
 		<>
 			<View style={styles.mainWrapper}>
-				<TodoStatusButton id={id} isDone={isDone} />
+				<TodoStatusButton id={id} isDone={status} />
 				<Text style={styles.text}>{text}</Text>
 				<TextButton onPress={doDelete} text="×" style={styles.button} textSize={32}/>
 			</View>
