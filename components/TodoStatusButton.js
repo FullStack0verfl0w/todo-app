@@ -7,6 +7,7 @@ const TodoStatusButton = (props) => {
 	const { id, isDone } = props;
 	const dispatch = useContext(dispatchContext);
 
+	// Меняем статус элемента
 	const onPress = (e) => {
 		dispatch({ type: ACTION_TYPE_CHANGE_TODO_STATUS, id: id });
 	};

@@ -11,6 +11,7 @@ const reducer = (state, action) => {
 		// Добавляем элемент todo в state
 		case ACTION_TYPE_ADD_TODO: {
 			const newState = {...state};
+			
 			// Структура элемента todo
 			const newElement = {
 				id: newState.todo.length + 1,
@@ -26,6 +27,7 @@ const reducer = (state, action) => {
 		// Удаляем элемент todo из state
 		case ACTION_TYPE_DELETE_TODO: {
 			const newState = {...state};
+
 			// Удаляем элемент
 			newState.todo.splice(action.id, 1);
 
@@ -55,6 +57,8 @@ const reducer = (state, action) => {
 
 			return newState;
 		}
+
+		// Возвращаем обычный state
 		default: {
 			return state;
 		}

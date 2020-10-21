@@ -9,10 +9,10 @@ const TodoItem = (props) => {
 	const { id, text, isDone } = props;
 	const dispatch = useContext(dispatchContext);
 
+	// Удаляем элемент из state
 	const doDelete = (e) => {
 		dispatch({ type: ACTION_TYPE_DELETE_TODO, id: id });
 	};
-	console.log("HELLO", id, text, isDone)
 
 	return (
 		<>

@@ -14,6 +14,7 @@ const initialState = {
 };
 
 const App = (props) => {
+	
 	// Создаем state и dispatch
 	const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -30,6 +31,7 @@ const AppContainer = (props) => {
 	const state = useContext(stateContext);
 	const dispatch = useContext(dispatchContext);
 
+	// Переключаем состояние окна
 	const toggleAddView = (e) => {
 		dispatch({ type: ACTION_TYPE_TOGGLE_ADD_VIEW, state: true });
 	};
@@ -38,6 +40,7 @@ const AppContainer = (props) => {
 		<>
 			<ScrollView style={styles.main} contentContainerStyle={styles.mainScroll}>
 				{
+					// Выводим красивое сообщение, о том, что ничего нет
 					state.todo.length === 0 ?
 						<Text style={styles.empty}>There's soo empty.</Text>
 					:
@@ -52,6 +55,7 @@ const AppContainer = (props) => {
 			</ScrollView>
 			<TextButton style={styles.addButton} text="+" textSize={32} onPress={toggleAddView}/>
 			{
+				// Показываем окно для добавления
 				state.todoAddViewState ?
 					<TodoAddView />
 				: <></>

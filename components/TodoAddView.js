@@ -9,14 +9,17 @@ const TodoAddView = (props) => {
 	const [text, setText] = useState("");
 	const dispatch = useContext(dispatchContext);
 
+	// Записываем текст в state
 	const onTextInputChange = (text) => {
 		setText(text);
 	};
 
+	// Закрываем окно
 	const closeView = (e) => {
 		dispatch({ type: ACTION_TYPE_TOGGLE_ADD_VIEW, state: false });
 	};
 
+	// Добавляем элемент в state и закрываем окно
 	const doAdd = (e) => {
 		dispatch({ type: ACTION_TYPE_ADD_TODO, text: text});
 		closeView(e);
